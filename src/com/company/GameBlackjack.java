@@ -3,12 +3,11 @@ package com.company;
 import java.util.Scanner;
 
 public class GameBlackjack {
-    private static GameBlackjack instance = null;
 
+    private static GameBlackjack instance = null;
     private GameBlackjack () {
 
     }
-
     public static GameBlackjack getInstance() {
         if (instance == null)
             instance = new GameBlackjack();
@@ -99,7 +98,6 @@ public class GameBlackjack {
         playerHand.printHand();
 
         if(playerExceeded) {
-            //System.out.println("Hand value: " + ptv);
             System.out.println("Player loses - hand value over 21. ");
             return;
         }

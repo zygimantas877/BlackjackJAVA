@@ -6,7 +6,6 @@ import java.util.Random;
 public class Deck extends Observable {
 
     private final int maxCards = 52;
-    private final int maxCardsInColor = 13;
     private int nextCardInDeck = 0;
     private Card[] deck = new Card[maxCards];
     public Deck() {
@@ -17,6 +16,7 @@ public class Deck extends Observable {
     public void createDeck() {
         int amount = 0;
         char[] colors = {'H', 'D', 'S', 'C'};
+        int maxCardsInColor = 13;
         for (char cardColor : colors)
             for (int cardValue = 1; cardValue <= maxCardsInColor; cardValue++) {
                 deck[amount] = new Card(cardValue, cardColor);
@@ -54,4 +54,5 @@ public class Deck extends Observable {
         nextCardInDeck = 0;
     }
 
+    public Card getCard(int cardIndex) {return deck[cardIndex];}
 }

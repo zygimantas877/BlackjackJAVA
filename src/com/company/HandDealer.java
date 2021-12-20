@@ -7,7 +7,7 @@ public class HandDealer extends HandPlayer {
 
     @Override
     public void printHand() {
-        System.out.println("Dealer ahs :");
+        System.out.println("Dealer has :");
         for (int i=0; i<amountOfCards; i++)
         {
             System.out.println(hand[i].getCardName());
