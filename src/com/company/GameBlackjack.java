@@ -88,11 +88,11 @@ public class GameBlackjack {
     }
 
     public void sumUpGame() {
-        int ptv = playerHand.countTotalHandValue();
-        int dtv = dealerHand.countTotalHandValue();
+        int playerTotalValue = playerHand.countTotalHandValue();
+        int dealerTotalValue = dealerHand.countTotalHandValue();
 
-        boolean playerExceeded = ptv > 21;
-        boolean dealerExceeded = dtv > 21;
+        boolean playerExceeded = playerTotalValue > 21;
+        boolean dealerExceeded = dealerTotalValue > 21;
 
         System.out.println("You have: ");
         playerHand.printHand();
@@ -102,16 +102,16 @@ public class GameBlackjack {
             return;
         }
 
-        if(dtv == ptv) {
+        if(dealerTotalValue == playerTotalValue) {
             System.out.println("Player pushes - player and dealer have same total value");
         }
-        else if(ptv > dtv || dealerExceeded) {
+        else if(playerTotalValue > dealerTotalValue || dealerExceeded) {
             System.out.println("Player wins - player has a hand value of "
-                    + ptv + " while dealer has a hand value of " + dtv);
+                    + playerTotalValue + " while dealer has a hand value of " + dealerTotalValue);
         }
-        else if(ptv < dtv) {
+        else if(playerTotalValue < dealerTotalValue) {
             System.out.println("Player loses - player has a hand value of "
-                    + ptv + " while dealer has a hand value of " + dtv);
+                    + playerTotalValue + " while dealer has a hand value of " + dealerTotalValue);
         }
 
     }
